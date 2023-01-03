@@ -3,7 +3,7 @@
     top: 0;
     left: 0;
 
-    height: 100vh;
+    height: 0vh;
     width: 100vw;
     
     overflow: hidden;
@@ -356,6 +356,10 @@
     .history-container > .history-content {
         justify-content: flex-start;
         align-items: flex-end;
+    }
+
+    .arithmetic-container > .left-side > nav > div > div:hover{
+        background-color: transparent;
     }
 }
 
