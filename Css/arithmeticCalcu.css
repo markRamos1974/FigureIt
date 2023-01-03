@@ -1,0 +1,365 @@
+.arithmetic-calculator {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 100vh;
+    width: 100vw;
+    
+    overflow: hidden;
+
+    background-color: #978269;
+    z-index: 100;
+}
+
+.animateHeight {
+    animation: animateHeight 700ms ease-in-out forwards;
+}
+
+.closeHeight {
+    animation: closeHeight 700ms ease-in-out forwards;
+}
+
+@keyframes animateHeight {
+    from {
+        height: 0vh;                   
+    }
+
+    to {
+        height: 100vh;
+    }
+}
+
+@keyframes closeHeight {
+    from {
+        height: 100vh;
+    }
+
+    to {
+        height: 0vh;
+    }
+}
+
+
+.arithmetic-container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+
+    padding: 2.375em;
+
+   
+
+}
+.arithmetic-container > .left-side > nav > div{
+
+    display: flex;
+    align-items: center;
+}
+.arithmetic-container > .left-side > nav > div > div:not(:last-child) {
+    height: 75.0833px;
+    width: 5.5em;
+  
+    margin-right: 1.3125em;
+   
+    background-image: url("../resources/ArrowLeft.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 70%;
+}
+
+.arithmetic-container > .left-side > nav > div > div:hover{
+    transition: 200ms ease-in-out ;
+    background-color: rgba(233, 238, 235, 0.1);
+}
+
+.arithmetic-container > .left-side > nav > div> h1 {
+    cursor: pointer;
+    color: #E9EEEB;
+    font-size: 4rem;
+}
+
+.arithmetic-calculator-container{
+
+    margin-top: 3.25em;
+    width: 46.375em;
+    height: calc(100vh - 16.7em);
+
+    background-color: #E9EEEB;
+
+
+    position: relative;
+    
+}
+.operand-container{
+    height: 16.9375em;
+    padding: 2.25em;
+    width: 100%;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.second-operand-container {
+    display: flex;
+    justify-content: flex-end;
+
+
+    /* margin-bottom: 1.625em; */
+}
+
+
+.second-operand-container > .operation,
+.second-operand-container > .second-operand{
+    font-family: 'Mukta';
+    font-size: 3em;
+    margin: 0em;
+    color: #A9A9A9;
+}
+.second-operand-container > .operation{
+
+    margin-right: 1.221em;
+}
+
+.first-operand{
+    font-family: 'Mukta';
+    font-size: 6em;
+    line-height: 100%;
+    text-align: right;
+
+    color: #978269;
+}
+.arithmetic-buttons{
+
+    height: calc((100% - 70px) - 138px);
+    width: 100%; 
+
+    background: linear-gradient(-90deg, #454646, #1E1811);
+
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto;
+}
+
+.arithmetic-buttons > button{
+
+    background-color: transparent;
+    font-family: 'Mukta';
+    font-size: 2.25rem;
+
+    border: none;
+    
+
+}
+
+.arithmetic-buttons > button:hover{
+    background-color: rgba(233, 238, 235, 0.1);
+}
+.arithmetic-buttons > button:active{
+    background-color: rgba(233, 238, 235, 0.0);
+
+}
+
+.operation-button {
+    color: #E7C8A5;
+}
+
+.number-button {
+    color: #E9EEEB;
+}
+
+.delete-button{
+    width: 40px;
+    height: 36px;
+    background: url("../resources/DeleteButton.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+}
+
+.delete-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-side{
+
+    margin-right: 47px;
+}
+
+.right-side {
+    width: 100%;
+    position: relative;
+}
+
+.history-container{
+    padding: 42px 51px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-90deg, #454646, #1E1811);
+}
+
+.history-container > div >  h1 {
+    font-size: 3em;
+    color: #E7C8A5;
+    width: 100%;
+    text-align: right;
+}
+
+.history-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-direction: column;
+    margin-top: 101px;
+
+    height:  calc(100% - 155px);
+
+    overflow-y: scroll;
+
+
+}
+.history-result-item{
+    margin-bottom: 50px;
+}
+
+.history-result-item > div{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.history-result-item > div:first-child > p {
+    font-size: 2.25em;
+    font-family: 'Mukta';
+    color: #E9EEEB;
+    margin: 0px;
+}
+
+.history-result-item > div:first-child > p:not(:last-child){
+    margin-right: 19px;
+}
+
+
+
+.history-result-item > div:last-child > p {
+    font-size: 2.5em;
+    font-family: 'Mukta';
+    color: #E7C8A5;
+    margin: 0px;
+
+    line-height: 80%;
+}
+.history-result-item > div:last-child  > p:not(:last-child){
+    margin-right: 28px;
+}
+
+
+@media screen and (max-width: 920px) {
+    .arithmetic-container{
+        padding: 0px;
+    }
+
+
+
+    .left-side {
+        width: 100vw;
+    }
+
+    .arithmetic-container > .left-side > nav{
+        padding: 20px;
+    }
+    .arithmetic-container > .left-side > nav{
+        display: flex;
+        justify-content: space-between;
+    }
+    .arithmetic-container > .left-side > nav > div:first-child > div {
+        width: 1.804375em;
+        height: 0.971875em;
+
+        background-size: contain;
+    }
+
+    .history-button-mobile{
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+
+        background: url("../resources/History.png");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .arithmetic-container > .left-side > nav > div > h1 {
+        font-size: 20px;
+    }
+
+    .arithmetic-calculator-container{
+        margin-top: 0px;
+        width: 100vw;
+    }
+
+    .arithmetic-buttons{
+        height: calc(100vh - 334.2px);
+    }
+
+    .arithmetic-buttons > button {
+        font-size: 1.65em;
+
+    }
+
+    .delete-button {
+        width: 29.14px;
+        height: 25.22px;
+    }
+
+
+
+
+    .right-side {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 0px;
+        height: 100vh;
+
+        transition: all 200ms ease-in-out;
+
+        overflow: hidden;
+    }
+    .history-container > div > h1 {
+        font-size: 35px;
+        width: fit-content;
+    }
+
+    .history-container > div{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .history-container > div > .history-return-button{
+        cursor: pointer;
+        width: 1.804375em;
+        height: 0.971875em;
+
+        background: url("../resources/ArrowLeft.png");
+        background-position: center;
+
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    .history-container > .history-content {
+        justify-content: flex-start;
+        align-items: flex-end;
+    }
+}
+
+.openHistory{
+    width: 100vw;
+    transition: all 200ms ease-in-out;
+}

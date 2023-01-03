@@ -1,0 +1,119 @@
+Basic Arithemtic
+
+	- Decimal Computation
+	- Addition
+	- Subtraction
+	- Multiplication
+	- Division
+
+	USER IS ABLE TO USE KEYBOARD FOR INPUTS
+
+	C BUTTON
+		- Clear inputs in first and second operand
+	% BUTTON
+		- will not append if currently no inputs otherwise append percentage
+		- if percent is present then do not append more percent character
+	Delete BUTTON
+		- remove the last character of the current active operand
+
+		- if first operand is not empty and second operand is empty then set current operand to the first operand 
+		  and clear the previous first operand and remove the current operation then perform the above
+
+		- if no inputs then return
+
+	ADDITION , DIVISION , MULTIPLICATION BUTTON
+		- if no input then return
+
+	SUBTRACTION BUTTON
+		- if there is no currrent input treat subtraction as negative notation
+		- if there is subtraction sign already or the first element of the input is not (-) then treat  subtraction as difference notation
+	= BUTTON
+		- If no elements then return
+		- if second operand is empty set 2nd operand as 0
+		- then append result to the history tab	
+	
+	!!!!!!!!!!!!!!!!!!!!!!!!!! NOTE: FIX OVERFLOW SCROLL IN HISTORY !!!!!!!!!!!!!!!!!!!!!!!
+
+Modular Aritmethic
+	- International Standard Book Number (ISBN)
+	- Universal Product Code (UPC)
+	- Verify Credit Card Validity
+	- Zeller Congruence
+	- Modular Congruence
+	- Modulo
+
+Central Tendency 
+	- DATA SET (CREATE TABLE FOR THE DATA)
+		- Mean
+		- Median 
+		- Mode
+		- Range
+		- Variance 
+		- Standard Deviation
+		- Quartile 1 - 3 
+		- Decile 1 - 9
+		- Percentile 1 - 99
+	- GROUPED DATA (CREATE TABLE FOR THE DATA)
+		- Mean
+		- Median 
+		- Mode
+		- Range
+		- Variance 
+		- Standard Deviation
+		- Quartile 1 - 3 
+		- Decile 1 - 9
+		- Percentile 1 - 99
+
+Binary Conversion 
+	- Binary
+		- Decimal
+		- Octal
+		- Hexadecimal
+	- Decimal
+		- Binary
+		- Octal
+		- Hexadecimal
+
+	- Octal
+		- Binary
+		- Decimal
+		- Hexadecimal
+
+	- Hexadecimal 
+		- Binary
+		- Decimal	
+		- Octal
+
+Apportionment and Voting System
+	- Apportionment 
+		- Thomas Jefferson's Plan
+		- Alexander Hamilton's Plan
+		- Quincy Adam's Plan 
+		- Daniel Webster's Plan
+		- Hungtinton-Hill's Plan
+
+	- Voting System
+		- Plurality Method 
+		- Plurality with Elimination Method 
+		- Borda Count Method
+		- Pairwise Comparison Method
+
+
+Soon to Add:
+	/* THIS ARE TENTATIVE FEATURES SOME MAY NOT BE INCLUDED */
+	- Mathematics of finance 
+		- Simple Interest
+		- Compound Interest
+		- Annuties
+	- Binary Calculator
+		- binary addition
+		- binary subtraction
+		- binary multiplication
+		- binary division
+	- Hamming Codes
+	- Cryptography
+
+
+
+	
+		
