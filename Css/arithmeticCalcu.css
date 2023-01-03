@@ -148,7 +148,7 @@
 
     background-color: transparent;
     font-family: 'Mukta';
-    font-size: 2.25rem;
+    font-size: 1.5rem;
 
     border: none;
     
@@ -158,7 +158,7 @@
 .arithmetic-buttons > button:hover{
     background-color: rgba(233, 238, 235, 0.1);
 }
-.arithmetic-buttons > button:active{
+.arithmetic-buttons > button:{
     background-color: rgba(233, 238, 235, 0.0);
 
 }
@@ -172,8 +172,8 @@
 }
 
 .delete-button{
-    width: 40px;
-    height: 36px;
+    width: 30px;
+    height: 26px;
     background: url("../resources/DeleteButton.png");
     background-position: center;
     background-repeat: no-repeat;
@@ -360,7 +360,7 @@
         align-items: flex-end;
     }
 
-    .arithmetic-container > .left-side > nav > div > div:hover{
+    .arithmetic-buttons > button:hover{
         background-color: transparent;
     }
 }
