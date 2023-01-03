@@ -12,6 +12,8 @@
     z-index: 100;
 }
 
+
+
 .animateHeight {
     animation: animateHeight 700ms ease-in-out forwards;
 }

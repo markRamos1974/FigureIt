@@ -3,9 +3,7 @@ const navigation = document.querySelector(".navigation-container")
 
 let activeMenu = 0;
 for(let i = 0; i < menus.length; i++){
-    menus[i].style.transform = "translateY(1000px)"
-    menus[i].style.transition = "all 600ms ease-out"
-    menus[i].style.opacity = "0"
+
     
     if (window.innerWidth <= 920){
         if (activeMenu == i) {

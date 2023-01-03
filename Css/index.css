@@ -103,7 +103,11 @@ a {
 }
 
 
-
+.menu{
+    transform: translateY(1000px);
+    opacity: 0;
+    transition: 600ms ease-in-out;
+}
 
 
 
