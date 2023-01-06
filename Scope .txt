@@ -33,6 +33,8 @@ Basic Arithemtic
 		- then append result to the history tab	
 	
 	!!!!!!!!!!!!!!!!!!!!!!!!!! NOTE: FIX OVERFLOW SCROLL IN HISTORY !!!!!!!!!!!!!!!!!!!!!!!
+	implement comma
+	implement copy paste
 
 Modular Aritmethic
 	- International Standard Book Number (ISBN)

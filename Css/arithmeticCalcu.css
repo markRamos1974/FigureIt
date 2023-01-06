@@ -3,7 +3,7 @@
     top: 0;
     left: 0;
 
-    height: 0vh;
+    height: 100vh;
     width: 100vw;
     
     overflow: hidden;
@@ -158,7 +158,7 @@
 .arithmetic-buttons > button:hover{
     background-color: rgba(233, 238, 235, 0.1);
 }
-.arithmetic-buttons > button:{
+.arithmetic-buttons > button:active{
     background-color: rgba(233, 238, 235, 0.0);
 
 }

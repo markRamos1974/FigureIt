@@ -20,7 +20,6 @@ backArrow.addEventListener("click", () => {
 
 const historyButtomMobile = document.querySelector(".history-button-mobile")
 const historyButtonReturnMobile = document.querySelector(".history-return-button")
-
 const historySection = document.querySelector(".right-side")
 
 historyButtomMobile.addEventListener("click", () => {
@@ -34,12 +33,31 @@ historyButtonReturnMobile.addEventListener("click", () => {
 
 
 
+const buttons = document.querySelectorAll(".arithmetic-buttons > button")
+for(let i = 0; i < buttons.length; i++){
+    window.addEventListener("resize", () => {
+        if(window.innerWidth <= 920){
+            buttons[i].addEventListener("mouseup", () => {
+                buttons[i].style.backgroundColor = "transparent"
+            })
+            buttons[i].addEventListener("mousedown", () => {
+                buttons[i].style.backgroundColor = "rgba(233, 238, 235, 0.1)"
+            })
+    
+        }
+    })
+    
+    if(window.innerWidth <= 920){
+        buttons[i].addEventListener("mouseup", () => {
+            buttons[i].style.backgroundColor = "transparent"
+        })
+        buttons[i].addEventListener("mousedown", () => {
+            buttons[i].style.backgroundColor = "rgba(233, 238, 235, 0.1)"
+        })
 
-
-
-
-
-
+    }
+   
+}
 
 
 
@@ -58,7 +76,6 @@ const numberButtons = document.querySelectorAll(".number-button")
 const operationButton = document.querySelectorAll(".operation-button")
 
 const historyContainer = document.querySelector(".history-content")
-
 class Calculator {
 
 
@@ -87,6 +104,7 @@ class Calculator {
 
     numberInput(element) {
         const currentFirstOperandValue = firstOperand.textContent
+        let formattedValue = currentFirstOperandValue;
         const elementValue = element.textContent
 
         if(firstOperand.textContent.length >= 14){
@@ -99,17 +117,62 @@ class Calculator {
 
         if(elementValue === ".") {
             if(currentFirstOperandValue.includes(".")) return
-            else if (currentFirstOperandValue.length === 0) firstOperand.textContent += "0."
-            else firstOperand.textContent = currentFirstOperandValue + elementValue
+            else if (currentFirstOperandValue.length === 0) formattedValue += "0."
+            else formattedValue = currentFirstOperandValue + elementValue
         }
 
        
 
         else {
-            firstOperand.textContent = currentFirstOperandValue + elementValue
+            formattedValue = currentFirstOperandValue + elementValue
         }   
 
+       
+        firstOperand.textContent =  this.formatNumbers(formattedValue)
+
     }
+ 
+    formatNumbers(text) {
+        
+        let currentPosition = 0
+        let format = ""
+        let data = text.split(".")
+        let textArray = data[0]
+
+
+
+
+
+        let combinedReversedArray = []
+        for(let i = textArray.length - 1; i != -1; i--){
+            if(textArray[i] === ",") continue
+            else {
+                combinedReversedArray.push(textArray[i])
+            }
+        }
+
+ 
+        for(let i = 0; i < combinedReversedArray.length; i++){
+            if(currentPosition % 3 == 0 && currentPosition != 0){
+                format = combinedReversedArray[i] + "," + format
+                currentPosition++
+            
+            }
+
+            else {
+                format = combinedReversedArray[i] + format
+                currentPosition++
+            }
+        }
+
+        
+        if(data[1] === undefined) return format
+        else  return format += "." + data[1]
+
+
+    }
+
+
     clear() {
        
         firstOperand.textContent = ""
@@ -139,7 +202,7 @@ class Calculator {
         }
 
         if(isSecondOperandNotNull) {
-            console.log(true)
+      
             firstOperand.textContent = secondOperand.textContent
             secondOperand.textContent = ""
             operation.textContent = ""
@@ -193,6 +256,7 @@ class Calculator {
         const data = this.getInput()
 
 
+
         if(currentFirstOperandValue.includes("%")) return data[0] * data[1]
         else {
             switch(currentOperationValue) {
@@ -209,10 +273,18 @@ class Calculator {
 
     }
 
+    filterInput(text) {
+        let filtered = ""
+        for(let i = 0; i < text.length; i++){
+            if(text[i] === ",") filtered += ""
+            else filtered += text[i]
+        }
 
+        return filtered
+    }
     getInput() {
-        let currentFirstOperandValue = firstOperand.textContent
-        let currentSecondOperandValue = secondOperand.textContent
+        let currentFirstOperandValue =  this.filterInput(firstOperand.textContent)
+        let currentSecondOperandValue =  this.filterInput(secondOperand.textContent)
         
         
 
@@ -227,8 +299,8 @@ class Calculator {
         }
         else {
             if(currentFirstOperandValue === "") currentFirstOperandValue = "0"
-            const firstNumber = parseFloat(currentFirstOperandValue)
-            const secondNumber =parseFloat(currentSecondOperandValue)
+            const firstNumber = parseFloat(currentSecondOperandValue)
+            const secondNumber =parseFloat(currentFirstOperandValue)
 
             return [firstNumber, secondNumber]
         }
@@ -238,7 +310,7 @@ class Calculator {
 
     handleResult(){
         const data = this.getInput()
-        const result = this.getResult()
+        const result = this.formatNumbers(this.getResult().toString())
         const currentOperation = operation.textContent
         firstOperand.textContent = result
         let operationtext
@@ -248,8 +320,8 @@ class Calculator {
         else operationtext = document.createTextNode(operation.textContent)
     
 
-        let firstNumberText = document.createTextNode(data[0])
-        let secondNumberText = document.createTextNode(data[1])
+        let firstNumberText = document.createTextNode(data[1])
+        let secondNumberText = document.createTextNode(data[0])
         
         let resultText = document.createTextNode(result)
         let equalsText = document.createTextNode("=")
